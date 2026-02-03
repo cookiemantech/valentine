@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Valentine?</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#ff9a9e, #fad0c4);
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    overflow: hidden;
+    text-align: center;
+  }
+  h1 { font-size: 2.2rem; color: #b30059; }
+  .buttons { margin-top: 20px; }
+  button {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: #ff4d79;
+    color: white;
+  }
+  button:hover { background: #ff1a5e; }
+  .heart {
+    position: absolute;
+    font-size: 20px;
+    animation: float 3s linear forwards;
+  }
+  @keyframes float {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-200px); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div id="content">
+  <h1>Will you be my Valentine? ❤️</h1>
+  <div class="buttons">
+    <button onclick="gotcha()">Yes</button>
+    <button onclick="gotcha()">No</button>
+  </div>
+</div>
+
+<script>
+function gotcha() {
+  document.getElementById("content").innerHTML =
+    "<h1>Gotcha! You're mine anyway! 😈💘</h1>";
+  for (let i = 0; i < 20; i++) {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerText = "❤️";
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.top = "80vh";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 3000);
+  }
+}
+</script>
+
+</body>
+</html>
