@@ -16,8 +16,13 @@
     overflow: hidden;
     text-align: center;
   }
-  h1 { font-size: 2.2rem; color: #b30059; }
-  .buttons { margin-top: 20px; }
+  h1 {
+    font-size: 2.2rem;
+    color: #b30059;
+  }
+  .buttons {
+    margin-top: 20px;
+  }
   button {
     font-size: 1.2rem;
     padding: 12px 25px;
@@ -28,7 +33,9 @@
     background: #ff4d79;
     color: white;
   }
-  button:hover { background: #ff1a5e; }
+  button:hover {
+    background: #ff1a5e;
+  }
   .heart {
     position: absolute;
     font-size: 20px;
@@ -43,17 +50,30 @@
 <body>
 
 <div id="content">
-  <h1>Will you be my Valentine? ❤️</h1>
+  <h1>Will you be my Valentine, Momo Baby? ❤️</h1>
   <div class="buttons">
-    <button onclick="gotcha()">Yes</button>
-    <button onclick="gotcha()">No</button>
+    <button onclick="yesClick()">Yes</button>
+    <button id="noBtn" onclick="noClick()">No</button>
   </div>
 </div>
 
 <script>
-function gotcha() {
+function yesClick() {
   document.getElementById("content").innerHTML =
-    "<h1>Gotcha! You're mine anyway! 😈💘</h1>";
+    "<h1>Good job 😌❤️<br>I LUBB YOU!!! 💘</h1>";
+  hearts();
+}
+
+function noClick() {
+  document.getElementById("noBtn").remove();
+  document.querySelector(".buttons").insertAdjacentHTML(
+    "beforeend",
+    "<h1>Too late 😏💖<br>You mine already.</h1>"
+  );
+  hearts();
+}
+
+function hearts() {
   for (let i = 0; i < 20; i++) {
     const h = document.createElement("div");
     h.className = "heart";
