@@ -64,12 +64,12 @@
 <div id="content">
   <h1>Will you be my Valentine, Momo Baby? ❤️</h1>
 
-  <!-- Show your uploaded cat image -->
-  <img src="Cat.jpg" alt="Cute cat">
+  <!-- Initial image -->
+  <img src="cat1.jpg" alt="Cute cat">
 
   <div class="buttons">
     <button onclick="yesClick()">Yes</button>
-    <button id="noBtn" onclick="noClick()">No</button>
+    <button onclick="noClick()">No</button>
   </div>
 </div>
 
@@ -77,7 +77,7 @@
 function yesClick() {
   document.getElementById("content").innerHTML = `
     <h1>Good job 😌❤️<br>I LUBB YOU!!! 💘</h1>
-    <img src="Cat.jpg">
+    <img src="cat2.jpg" alt="Happy cat">
   `;
   hearts();
 }
@@ -85,7 +85,7 @@ function yesClick() {
 function noClick() {
   document.getElementById("content").innerHTML = `
     <h1>Too late 😏💖<br>You mine already.</h1>
-    <img src="Cat.jpg">
+    <img src="Cat.jpg" alt="Sneaky cat">
   `;
   hearts();
 }
