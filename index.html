@@ -70,11 +70,12 @@ function yesClick() {
 
 function noClick() {
   document.getElementById("noBtn").remove();
-  document.querySelector(".buttons").insertAdjacentHTML(
-    "beforeend",
-    "<h1>Too late 😏💖<br>You mine already.</h1>"
-  );
+  document.getElementById("content").innerHTML =
+    `<h1>Too late 😏💖<br>You mine already.</h1>
+     <img src="Cat.jpg" style="width:240px;max-width:80%;border-radius:20px;margin-top:15px;">`;
   hearts();
+}
+
 }
 
 function hearts() {
@@ -92,3 +93,4 @@ function hearts() {
 
 </body>
 </html>
+
